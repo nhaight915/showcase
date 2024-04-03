@@ -1,0 +1,70 @@
+# Author: Nicole Haight
+# Description:  This program creates a user-defined class called Employee..
+#               ..that accepts four parameters for employee name, ID number, salary, and email address.
+#               A function called make_employee_dict is also created..
+#               ..that creates employee objects with data members from the Employee class
+#               The employee objects are then placed into an employee dictionary as values accessible by id number
+#               (e.g. key:value     ::     id_number:employee object)
+
+class Employee:
+    def __init__(self, name, id_number, salary, email_address):
+        """Initializion of Employee class"""
+        self._name = name
+        self._id_number = id_number
+        self._salary = salary
+        self._email_address = email_address
+
+    def get_name(self):
+        """Returns Employee object name"""
+        return self._name
+
+    def get_id_number(self):
+        """Returns Employee object ID number"""
+        return self._id_number
+
+    def get_salary(self):
+        """Returns Employee object salary"""
+        return self._salary
+
+    def get_email_address(self):
+        """Returns Employee object email address"""
+        return self._email_address
+
+
+def make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails):
+    """
+    Returns a dictionary that is created by first..
+    ...creating Employee class objects, then...
+    ...adding each employee object to a dictionary..
+    ..where each object data member can be obtained as a value..
+    ..when accessed by the ID number (the key)
+    """
+    employee_dictionary = {}
+
+    e1 = Employee(emp_names[0], emp_ids[0], emp_sals[0], emp_emails[0])
+    e2 = Employee(emp_names[1], emp_ids[1], emp_sals[1], emp_emails[1])
+    e3 = Employee(emp_names[2], emp_ids[2], emp_sals[2], emp_emails[2])
+
+    employee_dictionary[e1.get_id_number()] = e1
+    employee_dictionary[e2.get_id_number()] = e2
+    employee_dictionary[e3.get_id_number()] = e3
+
+    return employee_dictionary
+
+
+# emp_names = ["Jean", "Kat", "Pomona"]
+# emp_ids = ["100", "101", "102"]
+# emp_sals = [30, 35, 28]
+# emp_emails = ["Jean@aol.com", "Kat@aol.com", "Pomona@aol.com"]
+
+# result = make_employee_dict(emp_names, emp_ids, emp_sals, emp_emails)
+# print(result["102"].get_salary())
+
+
+
+
+
+#print(e3.get_name())
+#print(e3.get_id_number())
+#print(e3.get_salary())
+#print(e3.get_email_address())
