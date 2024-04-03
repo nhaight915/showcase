@@ -1,0 +1,44 @@
+# Author: Nicole Haight
+# GitHub username: nhaight915
+# Date: 2/28/24
+# Description:  This program contains a function named words_in_both
+#               that takes two strings as parameters
+#               and returns a set of only those words that appear in both strings.
+#               Assume that  all characters are letters or spaces and is not case-sensitive
+
+
+
+
+def words_in_both(string_1, string_2):
+    """This function takes two strings and creates a corresponding set containing the
+        parsed word elements of each string.
+        Then it creates a new list containing words that the two sets have in common
+    """
+
+    # Break up each string sentence into a list of words, each word becoming its own string
+    # Mutate each list by convert each word into lower case for proper comparison
+    # Convert each list into a set in order to perform set operations
+
+    list_1 = string_1.split()
+    list_1[:] = [x.lower() for x in list_1]
+    set_1 = set(list_1)
+
+    list_2 = string_2.split()
+    list_2[:] = [x.lower() for x in list_2]
+    set_2 = set(list_2)
+
+
+    #obtain new set with shared values from set_1 and set_2 using intersection operation
+
+    common_words = set_1 & set_2
+    return common_words
+
+
+# string_1 = "Lucille Ball was the star of I love Lucy"
+# string_2 = "Lucy throws the purple ball with the star on it"
+# common_words = words_in_both(string_1, string_2)
+# print(common_words)
+
+
+# common_words = words_in_both("She is a jack of all trades", 'Jack was tallest of all')
+# print(common_words)
